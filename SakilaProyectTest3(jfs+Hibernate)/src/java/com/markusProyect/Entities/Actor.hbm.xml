@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-oct-2015 19:06:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="sakilatest" name="com.markusProyect.Entities.Actor" optimistic-lock="version" table="actor">
+    <id name="actorId" type="int">
+      <column name="actor_id"/>
+      
+    </id>
+    <property name="firstName" type="string">
+      <column length="45" name="first_name" not-null="true"/>
+    </property>
+    <property name="lastName" type="string">
+      <column length="45" name="last_name" not-null="true"/>
+    </property>
+    
+    
+    <!--apunto a la clase con relacion 1-->
+    <many-to-one name="film">
+      <!--es el campo de la clase con relacion N que es clave ajena hacia la clase con relacion 1-->
+      <column name="idFilm"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

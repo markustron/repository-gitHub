@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-oct-2015 19:06:09 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="sakilatest" name="com.markusProyect.Entities.Film" optimistic-lock="version" table="film">
+    <id name="filmId" type="int">
+      <column name="filmId"/>      
+    </id>
+    <property name="title" type="string">
+      <column length="100" name="title" not-null="true"/>
+    </property>
+    <property name="releaseYear" type="string">
+      <column length="10" name="releaseYear" not-null="true"/>
+    </property>
+    <property name="lastUpdate" type="string">
+      <column length="10" name="lastUpdate" not-null="true"/>
+    </property>
+    <!--En el name pongo el List<> que haya en la clase con relacion 1-->
+    <list cascade="all" inverse="false" name="actores">
+      <key>
+        <!--En el name pongo la clave ajena que haya elegido de la clase con relacion N-->
+        <column name="idFilm"/>
+      </key>
+      <list-index>
+        <column name="Idx"/>
+      </list-index>
+      <one-to-many class="com.markusProyect.Entities.Actor"/>
+    </list>
+  </class>
+</hibernate-mapping>

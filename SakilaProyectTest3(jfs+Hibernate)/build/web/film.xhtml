@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+         <h:outputScript name="functions.js" library="js" target="body"/>
+         <style>
+             
+         </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Introduce el nombre del Film</h2>
+            <table>
+                <tr>
+                    <td>Introduce un numero de identificador</td>
+                    <td>
+                        <h:inputText label="FilmId" id="filmId" value="#{film.filmId}" required="true"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Introduce el Titulo</td>
+                    <td>
+                        <h:inputText label="Title" id="title" value="#{film.title}" required="true"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Introduce año de estreno(yyyy-MM-dd)</td>
+                    <td>
+                        <h:inputText label="ReleaseYear" id="releaseYear" value="#{film.releaseYear}" required="true"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Introduce ultima actualizacion(yyyy-MM-dd)</td>
+                    <td>
+                        <h:inputText label="LastUpdate" id="lastUpdate" value="#{film.lastUpdate}" required="true"/>
+                    </td>
+                </tr>
+            </table>
+            
+            
+            <div id="boton"><h:commandButton value="Grabar" action="#{film.addFilm}" onclick="saludo()"/></div>                
+        </h:form>
+            
+       
+        <br/><br/> 
+        
+        <br/><br/> 
+        <div id="enlace"><h:link value="Ir a Actor page" outcome="actor"/></div>
+    </h:body>
+</html>
+
